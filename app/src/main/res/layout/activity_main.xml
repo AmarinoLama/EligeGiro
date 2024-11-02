@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvRespuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿GIRAMOS?"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_email"
+        android:id="@+id/ivImagen"
+        android:visibility="gone"/>
+
+    <RadioGroup
+        android:id="@+id/rgOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="15dp">
+        <RadioButton
+            android:id="@+id/rbTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="texto"/>
+        <RadioButton
+            android:id="@+id/rbImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="imagen"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"/>
+
+
+</LinearLayout>
