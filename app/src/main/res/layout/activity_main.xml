@@ -39,11 +39,20 @@
             android:text="imagen"/>
     </RadioGroup>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etTexto"
+        android:hint="Angulo de giro (10 - 90 grados)"
+        android:inputType="number"/>
+
     <Button
         android:id="@+id/btAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aceptar"/>
+
+    <!-- snackbar -->
 
 
 </LinearLayout>
