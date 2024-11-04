@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,36 +53,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logicaBtn() {
+        if (etTexto.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Debe introducir un valor", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (Integer.parseInt(etTexto.getText().toString())<10 || Integer.parseInt(etTexto.getText().toString())>90) {
+            Toast.makeText(this, "Valor fuera de rango", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (rbTexto.isChecked()) {
             tvRespuesta.setText("GIRANDO!!");
             tvRespuesta.setTextColor(getResources().getColor(R.color.green));
             rgOpciones.setVisibility(View.GONE);
             btAceptar.setVisibility(View.GONE);
-            tvRespuesta.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (rotation == 360) {
-                        rotation = 0;
-                    }
-                    rotation += 45;
-                    tvRespuesta.setRotation(rotation);
-                }
-            });
+            tvRespuesta.setRotation(Integer.parseInt(etTexto.getText().toString()));
+            etTexto.setVisibility(View.GONE);
         } else if (rbImagen.isChecked()) {
             tvRespuesta.setVisibility(View.GONE);
             rgOpciones.setVisibility(View.GONE);
             btAceptar.setVisibility(View.GONE);
             ivImagen.setVisibility(View.VISIBLE);
-            ivImagen.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (rotation == 360) {
-                        rotation = 0;
-                    }
-                    rotation += 45;
-                    ivImagen.setRotation(rotation);
-                }
-            });
+            ivImagen.setRotation(Integer.parseInt(etTexto.getText().toString()));
+            etTexto.setVisibility(View.GONE);
         }
     }
 }
