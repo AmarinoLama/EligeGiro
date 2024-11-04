@@ -31,7 +31,8 @@
             android:id="@+id/rbTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="texto"/>
+            android:text="texto"
+            android:checked="true"/>
         <RadioButton
             android:id="@+id/rbImagen"
             android:layout_width="wrap_content"
